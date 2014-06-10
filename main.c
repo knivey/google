@@ -102,7 +102,7 @@ int main(int argc, char **argv)
 		return EXIT_FAILURE;
 	}
 
-	int n;
+	int n, i;
 	int rc = EXIT_FAILURE;
 	string results;
 	json_t *j_root, *j_responseStatus, *j_responseData, *j_results;
@@ -159,7 +159,7 @@ int main(int argc, char **argv)
 		goto exit;
 	}
 
-	for(int i = 0; i < json_array_size(j_results); i++) {
+	for(i = 0; i < json_array_size(j_results); i++) {
 		j_result = json_array_get(j_results, i);
 		if(!json_is_object(j_result)) {
 			fprintf(stderr, "Error: result %d is not an object\n",
