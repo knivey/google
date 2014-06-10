@@ -30,7 +30,7 @@ int fetch_search(const char *query, string results)
 {
 	CURL *curl;
 	CURLcode res;
-	char *url;
+	char *url = NULL;
 	char *esc_query;
 	size_t url_len;
 	int n;
@@ -105,7 +105,8 @@ int main(int argc, char **argv)
 	int n, i;
 	int rc = EXIT_FAILURE;
 	string results;
-	json_t *j_root, *j_responseStatus, *j_responseData, *j_results;
+	json_t *j_root = NULL;
+	json_t *j_responseStatus, *j_responseData, *j_results;
 	json_t *j_result, *j_title, *j_content, *j_unescapedUrl;
 	json_error_t error;
 
