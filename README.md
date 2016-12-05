@@ -7,8 +7,10 @@ Disclaimer: This is just a project where I'm playing with C for fun.
 
 ### Building
 
-To *try* to build the project simply run cmake and make in the build dir
+To build the project first fetch the git submodules then run cmake and make in the build dir
 ```
+git submodule init
+git submodule update
 cd build
 cmake ..
 make
